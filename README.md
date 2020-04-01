@@ -1,5 +1,5 @@
-Fisa vim config
-===============
+Dwarf Xonsh config
+==================
 
 A Xon.sh configuration.
 
