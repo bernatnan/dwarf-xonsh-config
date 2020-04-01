@@ -1,0 +1,60 @@
+# XONSH WIZARD START
+#xontrib load apt_tabcomplete whole_word_jumping docker_tabcomplete vox avox kitty prompt_ret_code readable-traceback z fzf-widgets
+xontrib load apt_tabcomplete coreutils whole_word_jumping docker_tabcomplete vox avox kitty prompt_ret_code readable-traceback z
+# XONSH WIZARD END
+
+### EXPORT ###
+## General
+$XONSH_SHOW_TRACEBACK = True
+$PROJECT_DIRS = "/home/bernat/.xonsh"
+#$PROMPT="{env_name}{BOLD_GREEN}{user}@{hostname}{NO_COLOR} {cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_GREEN}{prompt_end}{NO_COLOR} "
+#$PROMPT = "{env_name}{BOLD_GREEN}{user}@{hostname}{NO_COLOR} {cwd}{gitstatus: {} }{BOLD_GREEN}{prompt_end}{NO_COLOR} "
+$PROMPT = "{env_name}{BOLD_GREEN}{user}{NO_COLOR} {cwd}{gitstatus: [{}] }{BOLD_GREEN}{prompt_end}{NO_COLOR} "
+#$BOTTOM_TOOLBAR = "{env_name}{BOLD_GREEN}{user}@{hostname}{NO_COLOR} {cwd}{gitstatus: {} }{current_job}"
+#$RIGHT_PROMPT = "!"
+
+## # fzf-widgets
+## $fzf_history_binding = Keys.ControlR
+## $fzf_ssh_binding = Keys.ControlS
+
+## # Powerline2 (xpip uninstall xontrib-powerline2)
+## # There are two variables that can be set, PL_PROMPT for the right prompt and
+## # PL_TOOLBAR for the bottom toolbar. They contain a list of sections that can
+## # be used separated by >. The value ! means not to use that prompt.
+## #
+## # To see all available sections type pl_available_sections, and to commit
+## # changes to your prompt execute pl_build_prompt
+## $PL_PROMPT = 'who'
+## $PL_RPROMPT = 'virtualenv'  # for no toolbar
+## $PL_TOOLBAR = 'cwd>virtualenv>branch>full_proc'
+## #$PL_EXTRA_SEC = {"user": lambda: [' I am {user} ', 'BLACK', '#fd971f']}
+## $PL_SEP_MODE = 'round'
+
+# Virtualenv
+$WORKON_HOME = "~/.virtualenvs"
+$VIRTUALENV_ARGS = "--system-site-packages"
+
+
+#export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+#export PATH=$JAVA_HOME/bin:$PATH
+
+### ALIAS ###
+## General
+aliases['..'] = "cd .."
+aliases['...'] = "cd ../.."
+aliases['....'] = "cd ../../.."
+aliases['l'] = "ls -l"
+aliases['ll'] = "ls -lA"
+aliases['la'] = "ls -la"
+aliases['rm'] = 'rm -i'
+aliases['cp'] = 'cp -i'
+aliases['mv'] = 'mv -i'
+
+# Virtualenv
+aliases['mkvirt'] = "vox create"
+aliases['deactivate'] = "vox deactivate"
+aliases['wo'] = "vox workon"
+
+# Kitty
+aliases['ssh'] = 'kitty +kitten ssh'
+aliases['d'] = 'kitty +kitten diff'
